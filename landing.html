@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craig Marowa - Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      header {
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #f97316, #ea580c);
+        color: white;
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        margin: 2rem 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+        border: none;
+        cursor: pointer;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+      }
+
+      .content {
+        background: white;
+        border-radius: 15px;
+        padding: 2.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        color: #1e40af;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #4b5563;
+      }
+
+      .note {
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        border-left: 5px solid #f59e0b;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .note h3 {
+        color: #92400e;
+        margin-top: 0;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 4px solid #2563eb;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card h3 {
+        color: #1e40af;
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+
+      .feature-card p {
+        margin-bottom: 0;
+      }
+
+      .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #2563eb;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        color: #6b7280;
+        font-size: 0.9rem;
+        margin-top: auto;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        header {
+          padding: 2rem 1rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .content {
+          padding: 1.5rem;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Craig Marowa - Professional Portfolio</h1>
+        <p class="subtitle">Full-Stack Developer & Creative Specialist</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="content">
+        <h2>Modern HTML/CSS Portfolio Created</h2>
+        <p>
+          I've successfully transformed the React portfolio into a modern,
+          responsive HTML/CSS/JavaScript portfolio that better showcases
+          professional skills and achievements.
+        </p>
+
+        <center>
+          <a href="index-enhanced.html" class="cta-button"
+            >View New Portfolio →</a
+          >
+        </center>
+
+        <div class="note">
+          <h3>Project Summary</h3>
+          <p>This portfolio features:</p>
+          <ul>
+            <li>Responsive design that works on all devices</li>
+            <li>Modern UI with smooth animations and transitions</li>
+            <li>
+              Complete sections: About, Skills, Experience, Education, and
+              Contact
+            </li>
+            <li>Performance optimized with clean, semantic code</li>
+            <li>Professional color scheme and typography</li>
+          </ul>
+        </div>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h3>Modern Design</h3>
+            <p>
+              Clean, professional aesthetic with a blue/orange color scheme that
+              conveys trust and creativity.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📱</div>
+            <h3>Fully Responsive</h3>
+            <p>
+              Mobile-first approach ensures optimal viewing experience on all
+              device sizes.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h3>Interactive Elements</h3>
+            <p>
+              Smooth scrolling, hover effects, and animated skill bars for
+              enhanced user experience.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          The new portfolio is now available and is ready to impress potential
+          clients and employers with its professional presentation and modern
+          design.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 Craig Marowa. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

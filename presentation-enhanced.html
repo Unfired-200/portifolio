@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Presentation - Craig Marowa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #3b82f6; /* Sky blue */
+        --secondary: #0ea5e9; /* Light blue */
+        --accent: #06b6d4; /* Cyan */
+        --gradient-start: #bae6fd; /* Light sky blue */
+        --gradient-end: #7dd3fc; /* Medium sky blue */
+        --gradient-light: #e0f2fe; /* Very light sky blue */
+        --gradient-dark: #0284c7; /* Dark sky blue */
+        --dark: #1e293b;
+        --light: #f8fafc;
+        --gray: #94a3b8;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background: linear-gradient(
+          135deg,
+          var(--gradient-light) 0%,
+          #e2e8f0 100%
+        );
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      header {
+        text-align: center;
+        padding: 3rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: white;
+        border-radius: 0 0 20px 20px;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        transform: rotate(30deg);
+      }
+
+      h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .subtitle {
+        font-size: 1.3rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .hero-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent), var(--secondary));
+        color: white;
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        margin: 2rem 0;
+        transition: var(--transition);
+        box-shadow: 0 5px 15px rgba(6, 182, 212, 0.3);
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+      }
+
+      .hero-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4);
+      }
+
+      .hero-btn::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+      }
+
+      .hero-btn:hover::before {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+      }
+
+      .content-section {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-top: 4px solid var(--primary);
+      }
+
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary);
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-bottom: 1rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--secondary));
+        border-radius: 2px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .feature-card {
+        background: linear-gradient(135deg, white, var(--gradient-start));
+        padding: 2rem;
+        border-radius: 15px;
+        transition: var(--transition);
+        border-top: 4px solid var(--primary);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card i {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--secondary);
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .tech-item {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 0.7rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 500;
+        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        transition: var(--transition);
+      }
+
+      .tech-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+      }
+
+      .files-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .file-card {
+        background: var(--light);
+        padding: 1.5rem;
+        border-radius: 10px;
+        transition: var(--transition);
+        border-left: 4px solid var(--primary);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .file-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .file-card h4 {
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .file-card p {
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        color: var(--gray);
+        font-size: 1rem;
+        margin-top: 2rem;
+        background: linear-gradient(135deg, var(--dark), #0f172a);
+        color: white;
+        border-radius: 20px 20px 0 0;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        h1 {
+          font-size: 2.2rem;
+        }
+
+        .subtitle {
+          font-size: 1.1rem;
+        }
+
+        .content-section {
+          padding: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Portfolio Website Transformation</h1>
+        <p class="subtitle">
+          Modern HTML/CSS/JavaScript Implementation for Craig Marowa
+        </p>
+        <a href="index-enhanced.html" class="hero-btn"
+          >View Live Portfolio <i class="fas fa-arrow-right"></i
+        ></a>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="content-section">
+        <h2><i class="fas fa-star"></i> Project Overview</h2>
+        <p>
+          I've successfully transformed the existing React portfolio into a
+          modern, responsive HTML/CSS/JavaScript portfolio that effectively
+          showcases professional skills and achievements. The new portfolio
+          features a clean, professional design with enhanced user experience
+          and performance.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2><i class="fas fa-lightbulb"></i> Key Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Modern Design</h3>
+            <p>
+              Clean, professional aesthetic with a sky blue color scheme that
+              conveys trust and creativity.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Fully Responsive</h3>
+            <p>
+              Mobile-first approach ensures optimal viewing experience on all
+              device sizes.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Interactive Elements</h3>
+            <p>
+              Smooth scrolling, hover effects, and animated skill bars for
+              enhanced user experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2><i class="fas fa-code"></i> Technology Stack</h2>
+        <div class="tech-stack">
+          <div class="tech-item">HTML5</div>
+          <div class="tech-item">CSS3</div>
+          <div class="tech-item">JavaScript</div>
+          <div class="tech-item">Google Fonts</div>
+          <div class="tech-item">Font Awesome</div>
+          <div class="tech-item">Flexbox & Grid</div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2><i class="fas fa-folder-open"></i> Files Created</h2>
+        <div class="files-grid">
+          <div class="file-card">
+            <h4>index.html</h4>
+            <p>Main portfolio page with all sections</p>
+          </div>
+          <div class="file-card">
+            <h4>styles-enhanced.css</h4>
+            <p>Complete styling with responsive design</p>
+          </div>
+          <div class="file-card">
+            <h4>script.js</h4>
+            <p>JavaScript for interactivity and animations</p>
+          </div>
+          <div class="file-card">
+            <h4>presentation.html</h4>
+            <p>Project overview and documentation</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2><i class="fas fa-check-circle"></i> Sections Included</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-home"></i>
+            <h3>Hero Section</h3>
+            <p>Eye-catching introduction with call-to-action buttons</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-user"></i>
+            <h3>About Section</h3>
+            <p>Professional summary with personal information</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Skills Section</h3>
+            <p>Visual representation of technical abilities</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-briefcase"></i>
+            <h3>Experience</h3>
+            <p>Timeline layout showcasing work history</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Education</h3>
+            <p>Academic background and qualifications</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Contact</h3>
+            <p>Functional contact form with validation</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 Portfolio Transformation Project. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
